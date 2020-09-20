@@ -2,14 +2,16 @@ using System.Collections.Generic;
 using System.IO;
 using StardewModdingAPI.Toolkit.Utilities;
 using StardewValley;
+using TMXTile;
 using xTile;
 using xTile.Dimensions;
+using xTile.Format;
 using xTile.Layers;
 
 namespace StardewXnbHack.Framework.Writers
 {
     /// <summary>Writes <see cref="Map"/> assets to disk.</summary>
-    internal class MapWriter : BaseAssetWriter
+    public class MapWriter : BaseAssetWriter
     {
         /*********
         ** Fields
@@ -17,10 +19,19 @@ namespace StardewXnbHack.Framework.Writers
         /// <summary>The actual size of a tile in the tilesheet.</summary>
         const int TileSize = Game1.tileSize / Game1.pixelZoom;
 
+        /// <summary>The underlying map format handler.</summary>
+        private readonly TMXFormat Format;
+
 
         /*********
         ** Public methods
         *********/
+        public MapWriter()
+        {
+            // init TMX support
+            this.Format = new TMXFormat(Game1.tileSize / Game1.pixelZoom, Game1.tileSize / Game1.pixelZoom, Game1.pixelZoom, Game1.pixelZoom);
+        }
+
         /// <summary>Whether the writer can handle a given asset.</summary>
         /// <param name="asset">The asset value.</param>
         public override bool CanWrite(object asset)
@@ -48,8 +59,8 @@ namespace StardewXnbHack.Framework.Writers
             }
 
             // save file
-            using (Stream stream = File.Create($"{toPathWithoutExtension}.tbin"))
-                xTile.Format.FormatManager.Instance.BinaryFormat.Store(map, stream);
+            using (Stream stream = File.Create($"{toPathWithoutExtension}.tmx"))
+                this.Format.Store(map, stream, DataEncodingType.CSV);
 
             // undo tile size changes
             foreach (var layer in map.Layers)
