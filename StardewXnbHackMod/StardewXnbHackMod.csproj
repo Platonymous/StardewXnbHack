@@ -8,7 +8,7 @@
     <Platforms>x86</Platforms>
     <PlatformTarget>x86</PlatformTarget>
     <EnableHarmony>false</EnableHarmony>
-    <IgnoreModFilePatterns>StardewXnbHack.exe.config,StardewXnbHack.exe,Lidgren.Network\.(?:dll|pdb),GalaxyCSharp\.(?:dll|pdb),Lidgren.Network\.(?:dll|pdb),Steamworks.NET\.(?:dll|pdb)</IgnoreModFilePatterns>
+    <IgnoreModFilePatterns>TMXTile.dll,StardewXnbHack.exe.config,StardewXnbHack.exe,Lidgren.Network\.(?:dll|pdb),GalaxyCSharp\.(?:dll|pdb),Lidgren.Network\.(?:dll|pdb),Steamworks.NET\.(?:dll|pdb)</IgnoreModFilePatterns>
     <ModZipPath>$(SolutionDir)\_releases</ModZipPath>
   </PropertyGroup>
 
