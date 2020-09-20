@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{5EDB5467-B
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StardewXnbHackMod", "StardewXnbHackMod\StardewXnbHackMod.csproj", "{E84BDC5D-A3BC-4841-9511-F536D47EEA27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -24,6 +26,10 @@ Global
 		{F1512B6A-75A9-4425-B4EE-26D50E7075C8}.Debug|x86.Build.0 = Debug|x86
 		{F1512B6A-75A9-4425-B4EE-26D50E7075C8}.Release|x86.ActiveCfg = Release|x86
 		{F1512B6A-75A9-4425-B4EE-26D50E7075C8}.Release|x86.Build.0 = Release|x86
+		{E84BDC5D-A3BC-4841-9511-F536D47EEA27}.Debug|x86.ActiveCfg = Debug|x86
+		{E84BDC5D-A3BC-4841-9511-F536D47EEA27}.Debug|x86.Build.0 = Debug|x86
+		{E84BDC5D-A3BC-4841-9511-F536D47EEA27}.Release|x86.ActiveCfg = Release|x86
+		{E84BDC5D-A3BC-4841-9511-F536D47EEA27}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
